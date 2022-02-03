@@ -1,0 +1,66 @@
+.nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type=text]{
+    height: 45px;
+    width: 340px;
+    border-radius: 10px;
+    padding-left: 10px;
+    border: none;
+}
+
+::placeholder{
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+.plus{
+    margin-left: -39px;
+    height: 47px;
+    width: 40px;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #5c5f65;
+    border: none;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btmBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.btmBar p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.719);
+    font-size: 13px;
+}
+
+.p1{
+    margin-right: 30px;
+}
+
+.p2{
+    margin: 0 10px 0px 10px;
+    cursor: pointer;
+}
+
+.p2:hover, .p3:hover{
+    color: snow;
+}
+
+.p3{
+    margin-left: 30px;
+    cursor: pointer;
+}

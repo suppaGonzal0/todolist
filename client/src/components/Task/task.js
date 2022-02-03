@@ -1,15 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './task.css'
-import { useState } from 'react'
+import axios from 'axios'
 
 function Task({task}) {
 
-    const [flag, setFlag] = useState(true)
+    const changeStat = () => {
+        axios.put("http://localhost:3001/task", {
+            taskid: task.taskid
+        }).then((response) => {
+            console.log(response.data);
+        });
+    }
+    
 
     return (
-        <div className="task">
-            <input type="checkbox" onClick={() => setFlag(!flag)}/>
-            {flag ? <p>{task.taskname}</p> : <p><del>{task.taskname}</del></p>}
+        <div>
+            
+            {!task.status ? 
+            <div className="task">
+                <input type="checkbox" onChange={changeStat}/>
+                <p>{task.taskname}</p> 
+            </div>
+            : 
+            <div className="task">
+                <input type="checkbox" onChange={changeStat} checked/>
+                <p><del>{task.taskname}</del></p>
+            </div>
+            }
         </div>
     )
 }
